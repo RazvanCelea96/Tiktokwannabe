@@ -5,13 +5,14 @@ import Camera from '../screens/Camera';
 import Messenger from '../screens/Messenger';
 import Profile from '../screens/Profile';
 import Settings from '../screens/Settings';
-import {Button} from 'react-native';
+import Login from '../screens/Login';
 
 const Stack = createStackNavigator();
 
 function Navigation() {
   return (
     <Stack.Navigator>
+      <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Camera" component={Camera} />
       <Stack.Screen name="Messenger" component={Messenger} />
