@@ -1,4 +1,4 @@
-#Wed Sep 30 18:20:13 EEST 2020
-base.0=C\:\\Users\\Razvan\\Desktop\\react-native-apps\\Tiktokwannabe\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+#Thu Oct 01 14:39:59 EEST 2020
+base.0=C\:\\Users\\Razvan\\Desktop\\react-native-apps\\Tiktokwannabe\\mobile\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
