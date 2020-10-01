@@ -6,12 +6,14 @@ import Messenger from '../screens/Messenger';
 import Profile from '../screens/Profile';
 import Settings from '../screens/Settings';
 import Login from '../screens/Login';
+import SignUp from '../screens/SignUp';
 
 const Stack = createStackNavigator();
 
 function Navigation() {
   return (
     <Stack.Navigator>
+      <Stack.Screen name="SignUp" component={SignUp} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Camera" component={Camera} />
