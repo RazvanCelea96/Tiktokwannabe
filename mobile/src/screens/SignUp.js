@@ -6,6 +6,8 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
+import * as yup from 'yup';
+import {Formik} from 'formik';
 
 const SignUp = () => {
   let [fullName, setFullName] = useState('');
@@ -13,8 +15,24 @@ const SignUp = () => {
   let [username, setUsername] = useState('');
   let [password, setPassword] = useState('');
 
+  const onSignUpPressed = () => {
+    try {
+      console.log(
+        'user successfully signed up!: ',
+        username,
+        password,
+        fullName,
+        email,
+      );
+    } catch (err) {
+      console.log('error signing up: ', err);
+    }
+  };
+
   return (
     <View style={styles.container}>
+      <Text style={styles.logo}>Signing Up</Text>
+      <Text style={styles.forgot}>Already have an account?</Text>
       <View style={styles.inputView}>
         <TextInput
           style={styles.inputText}
@@ -51,7 +69,9 @@ const SignUp = () => {
           onChangeText={(text) => setPassword({password: text})}
         />
       </View>
-      <TouchableOpacity style={styles.loginBtn}>
+      <TouchableOpacity
+        style={styles.loginBtn}
+        onPress={() => onSignUpPressed()}>
         <Text style={styles.loginText}>Sign Up</Text>
       </TouchableOpacity>
     </View>
@@ -66,10 +86,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   logo: {
-    fontWeight: 'bold',
-    fontSize: 50,
+    fontWeight: '500',
+    fontSize: 21,
     color: '#272A2E',
-    marginBottom: 40,
+    lineHeight: 38,
   },
   inputView: {
     width: '80%',
@@ -86,7 +106,7 @@ const styles = StyleSheet.create({
     color: '#8B939A',
   },
   forgot: {
-    color: 'white',
+    color: 'black',
     fontSize: 11,
   },
   loginBtn: {
