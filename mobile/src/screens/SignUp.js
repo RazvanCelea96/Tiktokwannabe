@@ -48,7 +48,7 @@ const SignUp = () => {
           <View style={styles.logoView}>
             <Text style={styles.logo}>Signing In</Text>
             <Text style={styles.forgot}>
-              Already have an account? <Text>Login</Text>
+              Already have an account? <Text style={{color: 'red'}}>Login</Text>
             </Text>
           </View>
           <View style={styles.inputView}>
@@ -111,12 +111,14 @@ const SignUp = () => {
           <View style={styles.checkBoxContainer}>
             <CheckBox
               disabled={false}
+              boxType
               value={toggleCheckBox}
               onValueChange={(newValue) => setToggleCheckBox(newValue)}
             />
             <Text>
-              I have carefully read and agree to the <Text>Terms of Use</Text> &{' '}
-              <Text>Privacy Policy</Text>
+              I have carefully read and agree to the{' '}
+              <Text style={{color: 'red'}}>Terms of Use</Text> &#38;
+              <Text style={{color: 'red'}}>Privacy Policy</Text>
             </Text>
           </View>
           <TouchableOpacity
