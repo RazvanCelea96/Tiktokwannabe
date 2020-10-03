@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   TextInput,
   Text,
@@ -14,6 +14,7 @@ import * as yup from 'yup';
 import {Formik} from 'formik';
 const {height} = Dimensions.get('window');
 const SignUp = () => {
+  const [toggleCheckBox, setToggleCheckBox] = useState(false);
   return (
     <Formik
       style={{height}}
@@ -107,6 +108,17 @@ const SignUp = () => {
               </Text>
             )}
           </View>
+          <View style={styles.checkBoxContainer}>
+            <CheckBox
+              disabled={false}
+              value={toggleCheckBox}
+              onValueChange={(newValue) => setToggleCheckBox(newValue)}
+            />
+            <Text>
+              I have carefully read and agree to the <Text>Terms of Use</Text> &{' '}
+              <Text>Privacy Policy</Text>
+            </Text>
+          </View>
           <TouchableOpacity
             style={styles.loginBtn}
             disabled={!isValid}
@@ -152,6 +164,11 @@ const styles = StyleSheet.create({
   forgot: {
     color: 'black',
     fontSize: 11,
+  },
+  checkBoxContainer: {
+    flexDirection: 'row',
+    width: '100%',
+    alignItems: 'center',
   },
   loginBtn: {
     width: '40%',
