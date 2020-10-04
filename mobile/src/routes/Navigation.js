@@ -65,7 +65,7 @@ function Navigation() {
       <Stack.Screen name="SearchPeople" component={SearchPeople} />
       <Stack.Screen name="SearchMessages" component={SearchMessages} />
       <Stack.Screen name="Settings" component={Settings} />
-      <Stack.Screen name="NameChage" component={NameEdit} />
+      <Stack.Screen name="NameChange" component={NameEdit} />
       <Stack.Screen name="CaptionEdit" component={CaptionEdit} />
       <Stack.Screen name="ChangeAccount" component={ChangeAccount} />
       <Stack.Screen name="BlockList" component={BlockedList} />
@@ -74,22 +74,22 @@ function Navigation() {
       <Stack.Screen name="VerifyPassword" component={VerifyNewPassword} />
       <Stack.Screen name="Notifications" component={NotificationSettings} />
       <Stack.Screen
-        name="Notifications Requests settings"
+        name="NotificationsRequestsSettings"
         component={NotificationRequests}
       />
       <Stack.Screen
-        name="Notifications Comments settings"
+        name="NotificationsCommentsSettings"
         component={NotificationComments}
       />
       <Stack.Screen
-        name="Notifications Shares settings"
+        name="NotificationsSharesSettings"
         component={NotificationShares}
       />
       <Stack.Screen
-        name="Notifications Saves settings"
+        name="NotificationsSavesSettings"
         component={NotificationSaves}
       />
-      <Stack.Screen name="Preview settings" component={NotificationsPreview} />
+      <Stack.Screen name="PreviewSettings" component={NotificationsPreview} />
     </Stack.Navigator>
   );
 }
