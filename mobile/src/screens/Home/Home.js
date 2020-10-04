@@ -3,7 +3,6 @@ import {View, Text, StyleSheet} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
 export default function Home({navigation}) {
-  console.log(navigation);
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <Text>Home screen</Text>

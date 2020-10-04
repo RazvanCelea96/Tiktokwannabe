@@ -58,10 +58,10 @@ function Navigation() {
       <Stack.Screen name="Chat" component={Chat} />
       <Stack.Screen name="ForwardMessage" component={ForwardMessages} />
       <Stack.Screen name="Groups" component={Group} />
-      <Stack.Screen name="Group Chat" component={GroupChat} />
+      <Stack.Screen name="GroupChat" component={GroupChat} />
       <Stack.Screen name="PrivateMessage" component={PrivateMessage} />
       <Stack.Screen name="Reactions" component={Reactions} />
-      <Stack.Screen name="Read By" component={ReadBy} />
+      <Stack.Screen name="ReadBy" component={ReadBy} />
       <Stack.Screen name="SearchPeople" component={SearchPeople} />
       <Stack.Screen name="SearchMessages" component={SearchMessages} />
       <Stack.Screen name="Settings" component={Settings} />
