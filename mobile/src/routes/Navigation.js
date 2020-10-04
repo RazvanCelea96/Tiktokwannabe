@@ -8,7 +8,6 @@ import Profile from '../screens/Home/Profile/Profile';
 import Settings from '../screens/Home/Profile/Settings/Settings';
 import Login from '../screens/SigningIn/Login';
 import SignUp from '../screens/SigningIn/SignUp';
-import ForgotPassword from '../screens/SigningIn/ForgotPassword';
 import ResetPassword from '../screens/SigningIn/ResetPassword';
 import Share from '../screens/Home/Share';
 import HomeComments from '../screens/Home/HomeComments';
@@ -49,7 +48,6 @@ function Navigation() {
       <Stack.Screen name="Following" component={Following} />
       <Stack.Screen name="StoryViews" component={StoryViews} />
       <Stack.Screen name="SignUp" component={SignUp} />
-      <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
       <Stack.Screen name="ResetPassword" component={ResetPassword} />
       <Stack.Screen name="HomeComments" component={HomeComments} />
       <Stack.Screen name="Share" component={Share} />

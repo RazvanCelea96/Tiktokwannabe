@@ -76,6 +76,13 @@ const Login = ({navigation}) => {
               </Text>
             )}
           </View>
+          <Text style={styles.forgot}>
+            Forgot your password?
+            <TouchableOpacity
+              onPress={() => navigation.navigate('ResetPassword')}>
+              <Text style={{color: 'red'}}>Go Reset</Text>
+            </TouchableOpacity>
+          </Text>
           <TouchableOpacity
             style={styles.loginBtn}
             disabled={!isValid}
