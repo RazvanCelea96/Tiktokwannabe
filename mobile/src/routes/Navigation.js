@@ -42,36 +42,36 @@ const Stack = createStackNavigator();
 function Navigation() {
   return (
     <Stack.Navigator>
+      <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Profile" component={Profile} />
       <Stack.Screen name="Followers" component={Followers} />
       <Stack.Screen name="Following" component={Following} />
-      <Stack.Screen name="Story Views" component={StoryViews} />
-      <Stack.Screen name="Sign Up" component={SignUp} />
-      <Stack.Screen name="Forgot Password" component={ForgotPassword} />
-      <Stack.Screen name="Reset Password" component={ResetPassword} />
+      <Stack.Screen name="StoryViews" component={StoryViews} />
+      <Stack.Screen name="SignUp" component={SignUp} />
+      <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+      <Stack.Screen name="ResetPassword" component={ResetPassword} />
       <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Home Comments" component={HomeComments} />
+      <Stack.Screen name="HomeComments" component={HomeComments} />
       <Stack.Screen name="Share" component={Share} />
       <Stack.Screen name="Camera" component={Camera} />
       <Stack.Screen name="Messenger" component={Messenger} />
       <Stack.Screen name="Chat" component={Chat} />
-      <Stack.Screen name="Forward Message" component={ForwardMessages} />
+      <Stack.Screen name="ForwardMessage" component={ForwardMessages} />
       <Stack.Screen name="Groups" component={Group} />
       <Stack.Screen name="Group Chat" component={GroupChat} />
-      <Stack.Screen name="Private Message" component={PrivateMessage} />
+      <Stack.Screen name="PrivateMessage" component={PrivateMessage} />
       <Stack.Screen name="Reactions" component={Reactions} />
       <Stack.Screen name="Read By" component={ReadBy} />
-      <Stack.Screen name="Search People" component={SearchPeople} />
-      <Stack.Screen name="Search Messages" component={SearchMessages} />
+      <Stack.Screen name="SearchPeople" component={SearchPeople} />
+      <Stack.Screen name="SearchMessages" component={SearchMessages} />
       <Stack.Screen name="Settings" component={Settings} />
-      <Stack.Screen name="Name Chage" component={NameEdit} />
-      <Stack.Screen name="Caption Edit" component={CaptionEdit} />
-      <Stack.Screen name="Change Account" component={ChangeAccount} />
-      <Stack.Screen name="Block List" component={BlockedList} />
-      <Stack.Screen name="New Email" component={NewEmail} />
-      <Stack.Screen name="New Password" component={NewPassword} />
-      <Stack.Screen name="Verify Password" component={VerifyNewPassword} />
+      <Stack.Screen name="NameChage" component={NameEdit} />
+      <Stack.Screen name="CaptionEdit" component={CaptionEdit} />
+      <Stack.Screen name="ChangeAccount" component={ChangeAccount} />
+      <Stack.Screen name="BlockList" component={BlockedList} />
+      <Stack.Screen name="NewEmail" component={NewEmail} />
+      <Stack.Screen name="NewPassword" component={NewPassword} />
+      <Stack.Screen name="VerifyPassword" component={VerifyNewPassword} />
       <Stack.Screen name="Notifications" component={NotificationSettings} />
       <Stack.Screen
         name="Notifications Requests settings"
