@@ -1,25 +1,95 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import Home from '../screens/Home';
-import Camera from '../screens/Camera';
-import Messenger from '../screens/Messenger';
-import Profile from '../screens/Profile';
-import Settings from '../screens/Settings';
-import Login from '../screens/Login';
-import SignUp from '../screens/SignUp';
+import Home from '../screens/Home/Home';
+import Camera from '../screens/Home/Camera';
+import Messenger from '../screens/Home/Messenger/Messenger';
+import Chat from '../screens/Home/Messenger/Chat';
+import Profile from '../screens/Home/Profile/Profile';
+import Settings from '../screens/Home/Profile/Settings/Settings';
+import Login from '../screens/SigningIn/Login';
+import SignUp from '../screens/SigningIn/SignUp';
+import ForgotPassword from '../screens/SigningIn/ForgotPassword';
+import ResetPassword from '../screens/SigningIn/ResetPassword';
+import Share from '../screens/Home/Share';
+import HomeComments from '../screens/Home/HomeComments';
+import ForwardMessages from '../screens/Home/Messenger/ForwardMessages';
+import Group from '../screens/Home/Messenger/Group';
+import GroupChat from '../screens/Home/Messenger/GroupChat';
+import PrivateMessage from '../screens/Home/Messenger/PrivateMessage';
+import Reactions from '../screens/Home/Messenger/Reactions';
+import ReadBy from '../screens/Home/Messenger/ReadBy';
+import SearchMessages from '../screens/Home/Messenger/SearchMessages';
+import SearchPeople from '../screens/Home/Messenger/SearchPeople';
+import Followers from '../screens/Home/Profile/Followers';
+import StoryViews from '../screens/Home/Profile/StoryViews';
+import Following from '../screens/Home/Profile/Following';
+import NameEdit from '../screens/Home/Profile/Settings/NameEdit';
+import CaptionEdit from '../screens/Home/Profile/Settings/CaptionEdit';
+import ChangeAccount from '../screens/Home/Profile/Settings/ChangeAccount';
+import BlockedList from '../screens/Home/Profile/Settings/BlockedList';
+import NewEmail from '../screens/Home/Profile/Settings/NewEmail';
+import NewPassword from '../screens/Home/Profile/Settings/NewPassword';
+import VerifyNewPassword from '../screens/Home/Profile/Settings/VerifyNewPassword';
+import NotificationSettings from '../screens/Home/Profile/Settings/NotificationSettings/NotificationSettings';
+import NotificationRequests from '../screens/Home/Profile/Settings/NotificationSettings/NotificationRequests';
+import NotificationComments from '../screens/Home/Profile/Settings/NotificationSettings/NotificationComments';
+import NotificationShares from '../screens/Home/Profile/Settings/NotificationSettings/NotificationShares';
+import NotificationSaves from '../screens/Home/Profile/Settings/NotificationSettings/NotificationSaves';
+import NotificationsPreview from '../screens/Home/Profile/Settings/NotificationSettings/NotificationsPreview';
 
 const Stack = createStackNavigator();
 
 function Navigation() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="SignUp" component={SignUp} />
+      <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen name="Followers" component={Followers} />
+      <Stack.Screen name="Following" component={Following} />
+      <Stack.Screen name="Story Views" component={StoryViews} />
+      <Stack.Screen name="Sign Up" component={SignUp} />
+      <Stack.Screen name="Forgot Password" component={ForgotPassword} />
+      <Stack.Screen name="Reset Password" component={ResetPassword} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Home Comments" component={HomeComments} />
+      <Stack.Screen name="Share" component={Share} />
       <Stack.Screen name="Camera" component={Camera} />
       <Stack.Screen name="Messenger" component={Messenger} />
-      <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen name="Chat" component={Chat} />
+      <Stack.Screen name="Forward Message" component={ForwardMessages} />
+      <Stack.Screen name="Groups" component={Group} />
+      <Stack.Screen name="Group Chat" component={GroupChat} />
+      <Stack.Screen name="Private Message" component={PrivateMessage} />
+      <Stack.Screen name="Reactions" component={Reactions} />
+      <Stack.Screen name="Read By" component={ReadBy} />
+      <Stack.Screen name="Search People" component={SearchPeople} />
+      <Stack.Screen name="Search Messages" component={SearchMessages} />
       <Stack.Screen name="Settings" component={Settings} />
+      <Stack.Screen name="Name Chage" component={NameEdit} />
+      <Stack.Screen name="Caption Edit" component={CaptionEdit} />
+      <Stack.Screen name="Change Account" component={ChangeAccount} />
+      <Stack.Screen name="Block List" component={BlockedList} />
+      <Stack.Screen name="New Email" component={NewEmail} />
+      <Stack.Screen name="New Password" component={NewPassword} />
+      <Stack.Screen name="Verify Password" component={VerifyNewPassword} />
+      <Stack.Screen name="Notifications" component={NotificationSettings} />
+      <Stack.Screen
+        name="Notifications Requests settings"
+        component={NotificationRequests}
+      />
+      <Stack.Screen
+        name="Notifications Comments settings"
+        component={NotificationComments}
+      />
+      <Stack.Screen
+        name="Notifications Shares settings"
+        component={NotificationShares}
+      />
+      <Stack.Screen
+        name="Notifications Saves settings"
+        component={NotificationSaves}
+      />
+      <Stack.Screen name="Preview settings" component={NotificationsPreview} />
     </Stack.Navigator>
   );
 }
