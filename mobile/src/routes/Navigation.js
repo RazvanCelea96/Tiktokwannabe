@@ -42,6 +42,7 @@ const Stack = createStackNavigator();
 function Navigation() {
   return (
     <Stack.Navigator>
+      <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Profile" component={Profile} />
       <Stack.Screen name="Followers" component={Followers} />
@@ -50,7 +51,6 @@ function Navigation() {
       <Stack.Screen name="SignUp" component={SignUp} />
       <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
       <Stack.Screen name="ResetPassword" component={ResetPassword} />
-      <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="HomeComments" component={HomeComments} />
       <Stack.Screen name="Share" component={Share} />
       <Stack.Screen name="Camera" component={Camera} />

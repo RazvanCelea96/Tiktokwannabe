@@ -10,8 +10,9 @@ import {
 
 import * as yup from 'yup';
 import {Formik} from 'formik';
+import Navigation from '../../routes/Navigation';
 
-const Login = () => {
+const Login = ({navigation}) => {
   return (
     <Formik
       initialValues={{
@@ -40,7 +41,10 @@ const Login = () => {
           <View style={styles.logoView}>
             <Text style={styles.logo}>Signing In</Text>
             <Text style={styles.forgot}>
-              Don't have an account? <Text>Sign up</Text>
+              Don't have an account?
+              <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
+                <Text style={{color: 'red'}}>Sign up</Text>
+              </TouchableOpacity>
             </Text>
           </View>
           <View style={styles.inputView}>
@@ -75,7 +79,7 @@ const Login = () => {
           <TouchableOpacity
             style={styles.loginBtn}
             disabled={!isValid}
-            onPress={handleSubmit}>
+            onPress={() => navigation.navigate('Home')}>
             <Text style={styles.loginText}>Login</Text>
           </TouchableOpacity>
         </View>
