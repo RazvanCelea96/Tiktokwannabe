@@ -10,7 +10,7 @@ import {
 
 import * as yup from 'yup';
 import {Formik} from 'formik';
-import Navigation from '../../routes/Navigation';
+import {login} from '../../actions/AuthActions';
 
 const Login = ({navigation}) => {
   return (
@@ -86,7 +86,9 @@ const Login = ({navigation}) => {
           <TouchableOpacity
             style={styles.loginBtn}
             disabled={!isValid}
-            onPress={() => navigation.navigate('Home')}>
+            onPress={async () => {
+              let t = await login();
+            }}>
             <Text style={styles.loginText}>Login</Text>
           </TouchableOpacity>
         </View>
