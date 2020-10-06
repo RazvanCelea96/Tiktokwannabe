@@ -1,4 +1,6 @@
 import axios from 'axios';
+import AsyncStorage from '@react-native-community/async-storage';
+import SetAuthToken from '../utils/SetAuthToken';
 
 export async function login() {
   try {
@@ -10,10 +12,11 @@ export async function login() {
       },
     );
     console.log('aici e pe res');
-    console.log(res);
+    // console.log(res);
     const token = res.data.userJwt;
-    localStorage.setItem('jwtToken', token);
-    console.log('this is the token', token);
+    AsyncStorage.setItem('jwtToken', token);
+    SetAuthToken(token);
+    console.log(token);
   } catch (err) {
     console.log('aici e pe err');
     console.log(err);
