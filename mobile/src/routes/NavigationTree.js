@@ -1,16 +1,16 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createAppContainer, createSwitchNavigator} from 'react-navigation';
-import Auth from './pages/Account/Auth';
+import Auth from '../screens/Login/Auth';
 import Home from '../screens/Home/Home';
 import Camera from '../screens/Home/Camera';
 import Messenger from '../screens/Home/Messenger/Messenger';
 import Chat from '../screens/Home/Messenger/Chat';
 import Profile from '../screens/Home/Profile/Profile';
 import Settings from '../screens/Home/Profile/Settings/Settings';
-import Login from '../screens/SigningIn/Login';
-import SignUp from '../screens/SigningIn/SignUp';
-import ResetPassword from '../screens/SigningIn/ResetPassword';
+import Login from '../screens/Login/Login';
+import SignUp from '../screens/Login/SignUp';
+import ResetPassword from '../screens/Login/ResetPassword';
 import Share from '../screens/Home/Share';
 import HomeComments from '../screens/Home/HomeComments';
 import ForwardMessages from '../screens/Home/Messenger/ForwardMessages';
@@ -39,7 +39,7 @@ import NotificationSaves from '../screens/Home/Profile/Settings/NotificationSett
 import NotificationsPreview from '../screens/Home/Profile/Settings/NotificationSettings/NotificationsPreview';
 
 const AuthStack = createStackNavigator(
-  {Login, Register, Auth, ResetPassword},
+  {Login, SignUp, Auth, ResetPassword},
   {
     headerMode: 'none',
     initialRouteName: 'Auth',
@@ -47,47 +47,53 @@ const AuthStack = createStackNavigator(
 );
 
 const HomeStack = createStackNavigator(
-  {Home},
-  {Profile},
-  {Followers},
-  {Following},
-  {StoryViews},
-  {SignUp},
-  {ResetPassword},
-  {HomeComments},
-  {Share},
-  {Camera},
-  {Messenger},
-  {Chat},
-  {ForwardMessages},
-  {Group},
-  {GroupChat},
-  {PrivateMessage},
-  {Reactions},
-  {ReadBy},
-  {SearchPeople},
-  {SearchMessages},
-  {Settings},
-  {NameEdit},
-  {CaptionEdit},
-  {ChangeAccount},
-  {BlockedList},
-  {NewEmail},
-  {NewPassword},
-  {VerifyNewPassword},
-  {NotificationSettings},
-  {NotificationRequests},
-  {NotificationComments},
-  {NotificationShares},
-  {NotificationSaves},
-  {NotificationsPreview},
+  {
+    Home,
+    Profile,
+    Followers,
+    Following,
+    StoryViews,
+    SignUp,
+    ResetPassword,
+    HomeComments,
+    Share,
+    Camera,
+    Messenger,
+    Chat,
+    ForwardMessages,
+    Group,
+    GroupChat,
+    PrivateMessage,
+    Reactions,
+    ReadBy,
+    SearchPeople,
+    SearchMessages,
+    Settings,
+    NameEdit,
+    CaptionEdit,
+    ChangeAccount,
+    BlockedList,
+    NewEmail,
+    NewPassword,
+    VerifyNewPassword,
+    NotificationSettings,
+    NotificationRequests,
+    NotificationComments,
+    NotificationShares,
+    NotificationSaves,
+    NotificationsPreview,
+  },
+  {
+    headerMode: 'none',
+    initialRouteName: 'Home',
+  },
 );
 
 const AppStack = (isLoggedIn) =>
   createSwitchNavigator(
     {
       Auth: AuthStack,
-      Dashboard: HomeStack,
+      Home: HomeStack,
     },
     {
       backBehavior: 'initialRoute',
