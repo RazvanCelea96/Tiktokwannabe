@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   TextInput,
   Text,
@@ -6,11 +5,13 @@ import {
   Alert,
   View,
   StyleSheet,
+  ActivityIndicator,
 } from 'react-native';
-
 import * as yup from 'yup';
 import {Formik} from 'formik';
 import {login} from '../../actions/AuthActions';
+import React, {useEffect, useState} from 'react';
+import {SetAuthToken} from '../../utils/SetAuthToken';
 
 const Login = ({navigation}) => {
   return (
