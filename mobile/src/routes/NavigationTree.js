@@ -1,5 +1,4 @@
-import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
+import {createStackNavigator} from 'react-navigation-stack';
 import {createAppContainer, createSwitchNavigator} from 'react-navigation';
 import Auth from '../screens/Login/Auth';
 import Home from '../screens/Home/Home';
@@ -8,8 +7,8 @@ import Messenger from '../screens/Home/Messenger/Messenger';
 import Chat from '../screens/Home/Messenger/Chat';
 import Profile from '../screens/Home/Profile/Profile';
 import Settings from '../screens/Home/Profile/Settings/Settings';
-import Login from '../screens/Login/Login';
-import SignUp from '../screens/Login/SignUp';
+import Login from '../screens/Login/LoginContainer';
+// import SignUp from '../screens/Login/SignUp';
 import ResetPassword from '../screens/Login/ResetPassword';
 import Share from '../screens/Home/Share';
 import HomeComments from '../screens/Home/HomeComments';
@@ -39,7 +38,7 @@ import NotificationSaves from '../screens/Home/Profile/Settings/NotificationSett
 import NotificationsPreview from '../screens/Home/Profile/Settings/NotificationSettings/NotificationsPreview';
 
 const AuthStack = createStackNavigator(
-  {Login, SignUp, Auth, ResetPassword},
+  {Login, Auth, ResetPassword},
   {
     headerMode: 'none',
     initialRouteName: 'Auth',
@@ -53,7 +52,7 @@ const HomeStack = createStackNavigator(
     Followers,
     Following,
     StoryViews,
-    SignUp,
+    // SignUp,
     ResetPassword,
     HomeComments,
     Share,

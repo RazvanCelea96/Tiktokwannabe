@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import {Text, View} from 'react-native';
-import Button from './login/Button';
+import Button from './Button';
 import {StackActions} from 'react-navigation';
 
 export default class Login extends PureComponent {

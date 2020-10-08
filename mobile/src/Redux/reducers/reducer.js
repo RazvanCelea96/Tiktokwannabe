@@ -1,5 +1,5 @@
-import {ActionTypes} from '../../AppActions';
-import {DashboardActionTypes} from './actions';
+import {ActionTypes} from '../../App/AppActions';
+import {DashboardActionTypes} from '../actions/actions';
 
 const initialState = {
   loading: true,
