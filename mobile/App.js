@@ -1,18 +1,41 @@
-import {NavigationContainer} from '@react-navigation/native';
-import 'react-native-gesture-handler';
-import Navigation from './src/routes/Navigation';
 import SetAuthToken from './src/utils/SetAuthToken';
 import AsyncStorage from '@react-native-community/async-storage';
-import React from 'react';
+import React, {Component} from 'react';
+import {ActivityIndicator, SafeAreaView} from 'react-native';
+import createRootNavigation from './NavigationTree';
 
 SetAuthToken(AsyncStorage.jwtToken);
 
-const App = () => {
-  return (
-    <NavigationContainer>
-      <Navigation />
-    </NavigationContainer>
-  );
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    props.checkLogin();
+  }
+  render() {
+    // get Authentication Check and Authentication state from AppReducer.js
+    const {already_logged, auth_checked} = this.props.appState;
+
+    //Get base Component for render
+    const BaseView = auth_checked
+      ? _renderRootNavigation(already_logged)
+      : _renderLoader();
+    return (
+      <SafeAreaView
+        style={{
+          flex: 1,
+          backgroundColor: '#fff',
+          justifyContent: 'center',
+          alignContent: 'center',
+        }}
+        children={BaseView}
+      />
+    );
+  }
+}
+
+const _renderRootNavigation = (authState) => {
+  const RootNavigation = createRootNavigation(authState);
+  return <RootNavigation />;
 };
 
-export default App;
+const _renderLoader = () => <ActivityIndicator size="large" />;
