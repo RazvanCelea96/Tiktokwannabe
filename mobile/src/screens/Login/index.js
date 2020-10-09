@@ -114,7 +114,6 @@ export default class Login extends PureComponent {
         this.props.doLogin({username, password}, (error) => {
           alert(error);
           this.setState({loading: false});
-          navigation.navigate('Home');
         });
       });
     }

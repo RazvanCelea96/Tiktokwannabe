@@ -94,7 +94,7 @@ const AppStack = (isLoggedIn) =>
     },
     {
       backBehavior: 'initialRoute',
-      initialRouteName: isLoggedIn ? 'Home' : 'Auth',
+      initialRouteName: isLoggedIn ? 'Auth' : 'Home',
     },
   );
 

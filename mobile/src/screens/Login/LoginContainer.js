@@ -8,7 +8,7 @@ import Login from './index';
 const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = (dispatch, _) => ({
-  async doLogin(username, password, {navigation}) {
+  async doLogin(username, password) {
     //Make network request and other checks for your login implementation here
 
     try {
@@ -22,7 +22,6 @@ const mapDispatchToProps = (dispatch, _) => ({
       const responseJSON = await authResponse.data.userJwt;
       console.log(responseJSON);
       if (authResponse.ok && authResponse.status == 200) {
-        navigation.navigate('Home');
         AsyncStorage.setItem('token', responseJSON.token)
           .then(() => dispatch(actionCreator(DashboardActionTypes.LOAD_DATA)))
           .catch((error) => console.log('aici se fute', error))
