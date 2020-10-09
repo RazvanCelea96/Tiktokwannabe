@@ -1,12 +1,19 @@
 import React, {PureComponent} from 'react';
-import {Text, View, ToastAndroid, ActivityIndicator} from 'react-native';
-import Button from './Button';
-import Input from './Input';
+import {
+  Text,
+  View,
+  ToastAndroid,
+  ActivityIndicator,
+  StyleSheet,
+  KeyboardAvoidingView,
+} from 'react-native';
 import Anchor from './Anchor';
+import {TextInput, TouchableOpacity} from 'react-native-gesture-handler';
 
 export default class Login extends PureComponent {
   constructor(props) {
     super(props);
+
     this.state = {
       username: null,
       password: null,
@@ -23,45 +30,61 @@ export default class Login extends PureComponent {
       {loading} = this.state;
 
     return (
-      <>
-        <View style={style.containerStyle}>
-          <Text
-            style={style.shortTextStyle}
-            children="Provide your account credentials to continue"
-          />
-          <Input
-            onChangeText={this.onUsernameChange}
-            style={{marginBottom: 10}}
-            placeholder="Username"
-          />
-          <Input
-            onChangeText={this.onPasswordChange}
-            placeholder="Password"
-            isPassword={true}
-          />
-          <Anchor
-            style={{marginBottom: 32, textAlign: 'right'}}
-            title="Forgot Password?"
-            onPress={(_) => navigation.navigate('ResetPassword')}
-          />
-          {loading ? (
-            <ActivityIndicator size="small" />
-          ) : (
-            <Button
-              onPress={() => this.attemptLogin()}
-              full={true}
-              title="Login"
+      <KeyboardAvoidingView style={styles.container}>
+        <KeyboardAvoidingView style={styles.logoView}>
+          <Text style={styles.logo} children="Signing In" />
+          <View style={{flexDirection: 'row'}}>
+            <Text>Don't have an account? </Text>
+            <Anchor
+              style={{marginTop: 8, textAlign: 'center', color: 'red'}}
+              title="SignUp"
+              onPress={(_) =>
+                navigation.navigate({routeName: 'Register', params: {from}})
+              }
             />
-          )}
-          <Anchor
-            style={{marginTop: 8, textAlign: 'center'}}
-            title="Create an account"
-            onPress={(_) =>
-              navigation.navigate({routeName: 'Register', params: {from}})
-            }
+          </View>
+        </KeyboardAvoidingView>
+        <View style={styles.inputView}>
+          <TextInput
+            style={styles.inputText}
+            onChangeText={this.onUsernameChange}
+            placeholder="Username or Email"
+            autoCorrect={false}
+            autoCompleteType="off"
+            keyboardAppearance="dark"
+            numberOfLines={1}
+            spellCheck={false}
           />
         </View>
-      </>
+        <View style={styles.inputView}>
+          <TextInput
+            style={styles.inputText}
+            onChangeText={this.onPasswordChange}
+            placeholder="Password"
+            autoCorrect={false}
+            autoCompleteType="off"
+            keyboardAppearance="dark"
+            numberOfLines={1}
+            spellCheck={false}
+            secureTextEntry={true}
+          />
+        </View>
+        <Anchor
+          style={styles.forgot}
+          title="Forgot Password?"
+          onPress={(_) => navigation.navigate('ResetPassword')}
+        />
+
+        <View style={styles.loginBtn}>
+          {loading ? (
+            <ActivityIndicator size="large" />
+          ) : (
+            <TouchableOpacity onPress={() => this.attemptLogin()} title="Login">
+              <Text style={styles.loginText}>Sign Up</Text>
+            </TouchableOpacity>
+          )}
+        </View>
+      </KeyboardAvoidingView>
     );
   }
 
@@ -91,71 +114,64 @@ export default class Login extends PureComponent {
         this.props.doLogin({username, password}, (error) => {
           alert(error);
           this.setState({loading: false});
+          navigation.navigate('Home');
         });
       });
     }
   }
 }
 
-const style = {
-  containerStyle: {
+const styles = StyleSheet.create({
+  container: {
     flex: 1,
-    backgroundColor: '#050505',
-    flexDirection: 'column',
-    justifyContent: 'flex-end',
-    padding: 16,
+    backgroundColor: '#FFF',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-
-  brandTextStyle: {fontSize: 28, color: '#ffffff', fontWeight: '700'},
-
-  shortTextStyle: {fontSize: 14, color: '#ffffff90', marginBottom: 32},
-};
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: 'white',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-//   logo: {
-//     fontWeight: 'bold',
-//     fontSize: 21,
-//     color: '#272A2E',
-//   },
-//   logoView: {
-//     position: 'absolute',
-//     top: '20%',
-//     left: '12%',
-//   },
-//   inputView: {
-//     width: '80%',
-//     backgroundColor: '#f4f6f8',
-//     borderRadius: 100,
-//     height: 50,
-//     marginBottom: 20,
-//     justifyContent: 'center',
-//     padding: 20,
-//   },
-//   inputText: {
-//     height: 50,
-//     color: '#8B939A',
-//   },
-//   forgot: {
-//     color: 'black',
-//     fontSize: 11,
-//   },
-//   loginBtn: {
-//     width: '40%',
-//     backgroundColor: '#C6D0DA',
-//     borderRadius: 100,
-//     height: 50,
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//     marginTop: 20,
-//     marginBottom: 10,
-//   },
-//   loginText: {
-//     color: 'white',
-//   },
-// });
+  logo: {
+    fontWeight: 'bold',
+    fontSize: 21,
+    color: '#272A2E',
+  },
+  logoView: {
+    top: '-10%',
+    left: '-15%',
+  },
+  inputView: {
+    width: '80%',
+    backgroundColor: '#f4f6f8',
+    borderRadius: 100,
+    height: 50,
+    marginBottom: 20,
+    justifyContent: 'center',
+    padding: 20,
+    bottom: '10%',
+  },
+  inputText: {
+    height: 50,
+    color: 'black',
+  },
+  forgot: {
+    marginTop: 20,
+    color: 'black',
+    fontSize: 11,
+  },
+  checkBoxContainer: {
+    flexDirection: 'row',
+    width: '100%',
+    alignItems: 'center',
+  },
+  loginBtn: {
+    width: '50%',
+    backgroundColor: '#C6D0DA',
+    borderRadius: 100,
+    height: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 10,
+    bottom: '10%',
+  },
+  loginText: {
+    color: 'white',
+  },
+});

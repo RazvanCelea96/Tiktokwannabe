@@ -8,7 +8,6 @@ import Chat from '../screens/Home/Messenger/Chat';
 import Profile from '../screens/Home/Profile/Profile';
 import Settings from '../screens/Home/Profile/Settings/Settings';
 import Login from '../screens/Login/LoginContainer';
-// import SignUp from '../screens/Login/SignUp';
 import ResetPassword from '../screens/Login/ResetPassword';
 import Share from '../screens/Home/Share';
 import HomeComments from '../screens/Home/HomeComments';
@@ -52,7 +51,6 @@ const HomeStack = createStackNavigator(
     Followers,
     Following,
     StoryViews,
-    // SignUp,
     ResetPassword,
     HomeComments,
     Share,

@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
-import {Text, View} from 'react-native';
-import Button from './Button';
+import {StyleSheet, Text, View} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import {StackActions} from 'react-navigation';
 
 export default class Login extends PureComponent {
@@ -13,20 +13,20 @@ export default class Login extends PureComponent {
     const {goToScreen} = this;
     return (
       <>
-        <View style={style.containerStyle}>
-          <Text style={style.brandTextStyle} />
-          <Text style={style.shortTextStyle} children="Mergi FMM" />
-          <Button
+        <View style={styles.containerStyle}>
+          <Text children="Mergi FMM" />
+          <TouchableOpacity
+            style={styles.inputView}
             onPress={(_) => goToScreen('Login')}
             full={true}
             light={true}
-            title="Login"
-          />
-          <Button
+            title="Login">
+            <Text>Login</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.inputView}
             onPress={(_) => goToScreen('Register')}
-            style={{marginTop: 8}}
             full={true}
-            title="Create an account"
           />
         </View>
       </>
@@ -45,16 +45,21 @@ export default class Login extends PureComponent {
   }
 }
 
-const style = {
+const styles = StyleSheet.create({
   containerStyle: {
     flex: 1,
-    backgroundColor: '#050505',
+    backgroundColor: 'red',
     flexDirection: 'column',
     justifyContent: 'flex-end',
     padding: 16,
   },
-
-  brandTextStyle: {fontSize: 28, color: '#ffffff', fontWeight: '700'},
-
-  shortTextStyle: {fontSize: 14, color: '#ffffff90', marginBottom: 32},
-};
+  inputView: {
+    width: '80%',
+    backgroundColor: '#f4f6f8',
+    borderRadius: 100,
+    height: 50,
+    marginBottom: 20,
+    justifyContent: 'center',
+    padding: 20,
+  },
+});

@@ -7,19 +7,9 @@ export default class Anchor extends PureComponent {
     return (
       <TouchableNativeFeedback
         onPress={onPress}
+        style={style}
         background={TouchableNativeFeedback.SelectableBackgroundBorderless()}>
-        <Text
-          style={[
-            {
-              paddingHorizontal: 4,
-              paddingVertical: 8,
-              color: '#ffffff80',
-              textDecorationLine: 'underline',
-            },
-            style,
-          ]}
-          children={title}
-        />
+        <Text children={title} />
       </TouchableNativeFeedback>
     );
   }
