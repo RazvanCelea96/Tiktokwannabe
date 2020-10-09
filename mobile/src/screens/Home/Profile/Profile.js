@@ -1,12 +1,5 @@
 import React, {Component} from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-  Dimensions,
-} from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import photoCarousel1 from '../../../assets/photoCarousel1.jpg';
 import photoCarousel2 from '../../../assets/photoCarousel2.jpg';
@@ -16,9 +9,7 @@ import avatar3 from '../../../assets/avatar3.png';
 import avatar4 from '../../../assets/avatar4.png';
 import avatar5 from '../../../assets/avatar5.png';
 
-const windowHeight = Dimensions.get('window').height;
-
-export default class Profile extends Component {
+export default function Profile({navigation}) {
   renderTop = () => {
     return (
       <View
@@ -40,7 +31,9 @@ export default class Profile extends Component {
           <Text style={styles.name}>Beth Robertson</Text>
           <Text style={styles.nameTwo}>@BethRobertson</Text>
 
-          <TouchableOpacity style={styles.buttonContainer}>
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={() => navigation.navigate('Settings')}>
             <Text
               style={{
                 textTransform: 'uppercase',
@@ -75,9 +68,9 @@ export default class Profile extends Component {
           flexDirection: 'row',
           paddingVertical: 20,
         }}>
-        {this.renderNumber('300', 'Posts')}
-        {this.renderNumber('600', 'Following')}
-        {this.renderNumber('144k', 'Followers')}
+        {renderNumber('300', 'Posts')}
+        {renderNumber('600', 'Following')}
+        {renderNumber('144k', 'Followers')}
       </View>
     );
   };
@@ -104,10 +97,10 @@ export default class Profile extends Component {
         scrollEventThrottle={200}
         decelerationRate="fast"
         pagingEnabled>
-        {this.renderImage(photoCarousel1)}
-        {this.renderImage(photoCarousel2)}
-        {this.renderImage(photoCarousel1)}
-        {this.renderImage(photoCarousel2)}
+        {renderImage(photoCarousel1)}
+        {renderImage(photoCarousel2)}
+        {renderImage(photoCarousel1)}
+        {renderImage(photoCarousel2)}
       </ScrollView>
     );
   };
@@ -140,49 +133,47 @@ export default class Profile extends Component {
     );
   };
 
-  render() {
-    return (
-      <View
-        style={{
-          padding: 10,
-          paddingTop: 30,
-          height: '100%',
-          display: 'flex',
-          flex: 1,
-          flexDirection: 'column',
-          alignItems: 'stretch',
-        }}>
-        <View style={{paddingLeft: 10}}>
-          {this.renderTop()}
-          {this.renderNumbers()}
-        </View>
-        <ScrollView showsVerticalScrollIndicator={false}>
-          <View style={{height: 298}}>{this.renderPosts()}</View>
-          <View
-            style={{
-              flexGrow: 1,
-            }}>
-            <Text
-              style={{
-                fontSize: 13,
-                lineHeight: 18,
-                color: '#040C1B',
-                fontWeight: '600',
-                opacity: 0.5,
-                padding: 20,
-              }}>
-              HIGHLIGHTS
-            </Text>
-
-            {this.renderComment(avatar1)}
-            {this.renderComment(avatar2)}
-            {this.renderComment(avatar3)}
-            {this.renderComment(avatar4)}
-          </View>
-        </ScrollView>
+  return (
+    <View
+      style={{
+        padding: 10,
+        paddingTop: 30,
+        height: '100%',
+        display: 'flex',
+        flex: 1,
+        flexDirection: 'column',
+        alignItems: 'stretch',
+      }}>
+      <View style={{paddingLeft: 10}}>
+        {renderTop()}
+        {renderNumbers()}
       </View>
-    );
-  }
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={{height: 298}}>{renderPosts()}</View>
+        <View
+          style={{
+            flexGrow: 1,
+          }}>
+          <Text
+            style={{
+              fontSize: 13,
+              lineHeight: 18,
+              color: '#040C1B',
+              fontWeight: '600',
+              opacity: 0.5,
+              padding: 20,
+            }}>
+            HIGHLIGHTS
+          </Text>
+
+          {renderComment(avatar1)}
+          {renderComment(avatar2)}
+          {renderComment(avatar3)}
+          {renderComment(avatar4)}
+        </View>
+      </ScrollView>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
