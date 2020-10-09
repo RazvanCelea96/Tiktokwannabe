@@ -1,8 +1,22 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  Dimensions,
+} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import photoCarousel1 from '../../../assets/photoCarousel1.jpg';
 import photoCarousel2 from '../../../assets/photoCarousel2.jpg';
+import avatar1 from '../../../assets/avatar1.png';
+import avatar2 from '../../../assets/avatar2.png';
+import avatar3 from '../../../assets/avatar3.png';
+import avatar4 from '../../../assets/avatar4.png';
+import avatar5 from '../../../assets/avatar5.png';
+
+const windowHeight = Dimensions.get('window').height;
 
 export default class Profile extends Component {
   renderTop = () => {
@@ -14,9 +28,7 @@ export default class Profile extends Component {
         }}>
         <Image
           style={{width: 73, height: 73, borderRadius: 50}}
-          source={{
-            uri: 'https://bootdey.com/img/Content/avatar/avatar2.png',
-          }}
+          source={avatar5}
         />
         <View
           style={{
@@ -70,34 +82,60 @@ export default class Profile extends Component {
     );
   };
 
+  renderImage = (name) => {
+    return (
+      <Image
+        source={name}
+        style={{
+          width: 200,
+          height: '100%',
+          marginRight: 20,
+          borderRadius: 15,
+        }}
+      />
+    );
+  };
+
   renderPosts = () => {
+    return (
+      <ScrollView
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        scrollEventThrottle={200}
+        decelerationRate="fast"
+        pagingEnabled>
+        {this.renderImage(photoCarousel1)}
+        {this.renderImage(photoCarousel2)}
+        {this.renderImage(photoCarousel1)}
+        {this.renderImage(photoCarousel2)}
+      </ScrollView>
+    );
+  };
+
+  renderComment = (avatar) => {
     return (
       <View
         style={{
-          borderWidth: 1,
-          borderColor: 'blue',
-          height: 298,
+          alignItems: 'flex-start',
           flexDirection: 'row',
-          paddingVertical: 5,
         }}>
         <Image
-          source={photoCarousel1}
-          style={{
-            width: 200,
-            height: '100%',
-            marginRight: 20,
-            borderRadius: 15,
-          }}
+          style={{width: 50, height: 50, borderRadius: 25}}
+          source={avatar}
         />
-        <Image
-          source={photoCarousel2}
+        <View
           style={{
-            width: 200,
-            height: '100%',
-            marginRight: 20,
-            borderRadius: 15,
-          }}
-        />
+            fontFamily: 'Avenir Next Cyr',
+            height: 40,
+            marginLeft: 20,
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+          }}>
+          <Text style={styles.name}>Beth Robertson</Text>
+          <Text style={styles.nameTwo}>
+            What a magniful story! Thanks for sharring
+          </Text>
+        </View>
       </View>
     );
   };
@@ -108,29 +146,40 @@ export default class Profile extends Component {
         style={{
           padding: 10,
           paddingTop: 30,
-          borderWidth: 1,
-          borderColor: 'green',
           height: '100%',
           display: 'flex',
           flex: 1,
           flexDirection: 'column',
           alignItems: 'stretch',
         }}>
-        <View style={{paddingLeft: 10, borderColor: 'red', borderWidth: 1}}>
+        <View style={{paddingLeft: 10}}>
           {this.renderTop()}
           {this.renderNumbers()}
         </View>
-        <View>
-          <ScrollView
-            horizontal={true}
-            showsHorizontalScrollIndicator={false}
-            scrollEventThrottle={200}
-            decelerationRate="fast"
-            pagingEnabled>
-            {this.renderPosts()}
-          </ScrollView>
-        </View>
-        <View style={{borderWidth: 1, borderColor: 'red', flexGrow: 1}}></View>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={{height: 298}}>{this.renderPosts()}</View>
+          <View
+            style={{
+              flexGrow: 1,
+            }}>
+            <Text
+              style={{
+                fontSize: 13,
+                lineHeight: 18,
+                color: '#040C1B',
+                fontWeight: '600',
+                opacity: 0.5,
+                padding: 20,
+              }}>
+              HIGHLIGHTS
+            </Text>
+
+            {this.renderComment(avatar1)}
+            {this.renderComment(avatar2)}
+            {this.renderComment(avatar3)}
+            {this.renderComment(avatar4)}
+          </View>
+        </ScrollView>
       </View>
     );
   }
