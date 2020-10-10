@@ -3,35 +3,40 @@ import {View, Text, StyleSheet, Image} from 'react-native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import avatar5 from '../../../../assets/avatar5.png';
 
-export default function Settings({navigation}) {
-  const renderText = (title, subtitle) => {
+const user = {
+  name: 'smallsnake312',
+};
+
+export default function Settings(navigation) {
+  const renderText = (text, subtext) => {
     return (
       <View
         style={{
-          fontFamily: 'Avenir Next Cyr',
-          height: 40,
+          //fontFamily: 'Avenir Next Cyr',
           marginLeft: 20,
           flexDirection: 'column',
           justifyContent: 'space-between',
         }}>
-        <Text style={styles.name} children={title} />
-        <Text style={styles.nameTwo} children={subtitle} />
+        <Text style={styles.name} children={user.name} />
+        <Text style={styles.nameTwo} children={subtext} />
       </View>
     );
   };
-  const renderComment = () => {
+
+  const renderComment = (text, subtext) => {
     return (
       <View
         style={{
           alignItems: 'flex-start',
           flexDirection: 'row',
           marginBottom: 10,
+          width: 300,
         }}>
         <Image
           style={{width: 50, height: 50, borderRadius: 25}}
           source={avatar5}
         />
-        {renderText(title)}
+        {renderText(text, subtext)}
       </View>
     );
   };
@@ -52,9 +57,12 @@ export default function Settings({navigation}) {
           style={{
             flexGrow: 1,
           }}>
-          {renderComment()}
-          {renderComment()}
-          {renderComment()}
+          {renderComment('Main account', 'smallsnake312')}
+          {renderComment('Name', 'Ahmed Shubber')}
+          {renderComment(
+            'Caption',
+            `Hi! I’m abigail. I’m a model based in florida. Next to modeling I love to play video games and watch my fav shows on netflix.`,
+          )}
           {renderComment()}
         </View>
       </ScrollView>
@@ -64,7 +72,7 @@ export default function Settings({navigation}) {
 
 const styles = StyleSheet.create({
   name: {
-    fontFamily: 'Avenir Next Cyr',
+    //fontFamily: 'Avenir Next Cyr',
     fontSize: 16,
     lineHeight: 18,
     color: '#040C1B',

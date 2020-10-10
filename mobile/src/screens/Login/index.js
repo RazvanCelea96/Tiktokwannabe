@@ -79,8 +79,13 @@ export default class Login extends PureComponent {
           {loading ? (
             <ActivityIndicator size="large" />
           ) : (
-            <TouchableOpacity onPress={() => this.attemptLogin()} title="Login">
-              <Text style={styles.loginText}>Sign Up</Text>
+            <TouchableOpacity
+              onPress={() => {
+                this.attemptLogin();
+                navigation.navigate('Home');
+              }}
+              title="Login">
+              <Text style={styles.loginText}>Sign In</Text>
             </TouchableOpacity>
           )}
         </View>

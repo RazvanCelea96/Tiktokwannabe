@@ -40,7 +40,7 @@ const AuthStack = createStackNavigator(
   {Login, Auth, ResetPassword},
   {
     headerMode: 'none',
-    initialRouteName: 'Auth',
+    initialRouteName: 'Login',
   },
 );
 
@@ -89,12 +89,12 @@ const HomeStack = createStackNavigator(
 const AppStack = (isLoggedIn) =>
   createSwitchNavigator(
     {
-      Auth: AuthStack,
+      Login: AuthStack,
       Home: HomeStack,
     },
     {
       backBehavior: 'initialRoute',
-      initialRouteName: isLoggedIn ? 'Auth' : 'Home',
+      initialRouteName: isLoggedIn ? 'Login' : 'Home',
     },
   );
 

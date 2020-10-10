@@ -1,0 +1,6 @@
+module Pods_Tiktokwannabe_TiktokwannabeTests {
+  umbrella header "Pods-Tiktokwannabe-TiktokwannabeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

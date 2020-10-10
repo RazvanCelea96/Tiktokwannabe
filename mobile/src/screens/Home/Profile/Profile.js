@@ -41,7 +41,7 @@ export default function Profile({navigation}) {
                 letterSpacing: 0.5,
                 fontSize: 11,
                 lineHeight: 22,
-                fontFamily: 'Avenir Next Cyr',
+                //fontFamily: 'Avenir Next Cyr',
               }}>
               Settings
             </Text>
@@ -118,7 +118,7 @@ export default function Profile({navigation}) {
         />
         <View
           style={{
-            fontFamily: 'Avenir Next Cyr',
+            //fontFamily: 'Avenir Next Cyr',
             height: 40,
             marginLeft: 20,
             flexDirection: 'column',
@@ -178,7 +178,7 @@ export default function Profile({navigation}) {
 
 const styles = StyleSheet.create({
   name: {
-    fontFamily: 'Avenir Next Cyr',
+    //fontFamily: 'Avenir Next Cyr',
     fontSize: 16,
     lineHeight: 18,
     color: '#040C1B',
