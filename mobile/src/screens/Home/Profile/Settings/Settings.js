@@ -1,29 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import avatar5 from '../../../../assets/avatar5.png';
+import apptheme from '../../../../assets/apptheme.png';
+import bell from '../../../../assets/bell.png';
+import blocked from '../../../../assets/blocked.png';
+import lock from '../../../../assets/lock.png';
+import mail from '../../../../assets/mail.png';
+import picture from '../../../../assets/picture.png';
+import profile from '../../../../assets/profile.png';
+import t from '../../../../assets/t.png';
+import recycle from '../../../../assets/recycle.png';
 
-const user = {
-  name: 'smallsnake312',
-};
-
-export default function Settings(navigation) {
-  const renderText = (text, subtext) => {
-    return (
-      <View
-        style={{
-          //fontFamily: 'Avenir Next Cyr',
-          marginLeft: 20,
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-        }}>
-        <Text style={styles.name} children={user.name} />
-        <Text style={styles.nameTwo} children={subtext} />
-      </View>
-    );
-  };
-
-  const renderComment = (text, subtext) => {
+export default function Settings({navigation}) {
+  const [pictureIsPressed, setPicutreIsPressed] = useState(true);
+  const renderPictureSetting = (
+    name,
+    description,
+    source,
+    screen,
+    screenName,
+  ) => {
     return (
       <View
         style={{
@@ -32,12 +29,144 @@ export default function Settings(navigation) {
           marginBottom: 10,
           width: 300,
         }}>
-        <Image
-          style={{width: 50, height: 50, borderRadius: 25}}
-          source={avatar5}
-        />
-        {renderText(text, subtext)}
+        <View
+          style={{
+            borderRadius: 37.5,
+            backgroundColor: 'rgba(198, 208, 218, 0.2)',
+            width: 34,
+            height: 34,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <Image
+            style={{
+              width: 14,
+              height: 14,
+            }}
+            source={source}
+          />
+        </View>
+        <View style={{flexDirection: 'column'}}>
+          <TouchableOpacity
+            onPress={
+              (() => (setPicutreIsPressed = pictureIsPressed = true),
+              console.log(pictureIsPressed))
+            }>
+            <Text>{renderText(name)}</Text>
+          </TouchableOpacity>
+          {pictureIsPressed ? (
+            <View style={{flexDirection: 'row', marginLeft: 17}}>
+              <TouchableOpacity
+                style={{
+                  borderWidth: 1,
+                  borderColor: '#7D848B',
+                  borderRadius: 17.5,
+                  paddingHorizontal: 25,
+                  marginRight: 10,
+                  paddingVertical: 5,
+                  alignItems: 'center',
+                }}>
+                <Text style={{color: '#7D848B', fontSize: 13}}>Edit </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={{
+                  borderWidth: 1,
+                  borderColor: 'red',
+                  borderRadius: 17.5,
+                  paddingHorizontal: 20,
+                  marginRight: 10,
+                  paddingVertical: 5,
+                  alignItems: 'center',
+                }}>
+                <Text style={{color: 'red', fontSize: 13}}>New picture </Text>
+              </TouchableOpacity>
+            </View>
+          ) : (
+            <></>
+          )}
+        </View>
       </View>
+    );
+  };
+
+  const renderText = (name, description) => {
+    return (
+      <View
+        style={{
+          //fontFamily: 'Avenir Next Cyr',
+          marginLeft: 20,
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+        }}>
+        <Text style={styles.name} children={name} />
+        <Text style={styles.nameTwo} children={description} />
+      </View>
+    );
+  };
+
+  const renderProfileSetting = (
+    name,
+    description,
+    source,
+    screen,
+    screenName,
+  ) => {
+    return (
+      <TouchableOpacity
+        onPress={() => navigation.navigate(screen, {screen: screenName})}>
+        <View
+          style={{
+            alignItems: 'flex-start',
+            flexDirection: 'row',
+            marginBottom: 10,
+            width: 300,
+          }}>
+          <Image
+            style={{
+              width: 36,
+              height: 36,
+              borderRadius: 18,
+            }}
+            source={source}
+          />
+
+          {renderText(name, description)}
+        </View>
+      </TouchableOpacity>
+    );
+  };
+  const renderSetting = (name, description, source, screen, screenName) => {
+    return (
+      <TouchableOpacity
+        onPress={() => navigation.navigate(screen, {screen: screenName})}>
+        <View
+          style={{
+            alignItems: 'flex-start',
+            flexDirection: 'row',
+            marginBottom: 10,
+            width: 300,
+          }}>
+          <View
+            style={{
+              borderRadius: 37.5,
+              backgroundColor: 'rgba(198, 208, 218, 0.2)',
+              width: 34,
+              height: 34,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <Image
+              style={{
+                width: 14,
+                height: 14,
+              }}
+              source={source}
+            />
+          </View>
+
+          {renderText(name, description)}
+        </View>
+      </TouchableOpacity>
     );
   };
 
@@ -51,19 +180,38 @@ export default function Settings(navigation) {
         flex: 1,
         flexDirection: 'column',
         alignItems: 'stretch',
+        backgroundColor: '#fff',
+        paddingLeft: 20,
       }}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View
           style={{
             flexGrow: 1,
           }}>
-          {renderComment('Main account', 'smallsnake312')}
-          {renderComment('Name', 'Ahmed Shubber')}
-          {renderComment(
+          {renderProfileSetting(
+            'Main account',
+            'smallsnake312',
+            avatar5,
+            'ChangeAccount',
+          )}
+          {renderSetting('Name', 'Ahmed Shubber', profile, 'NameEdit')}
+          {renderSetting(
             'Caption',
             `Hi! I’m abigail. I’m a model based in florida. Next to modeling I love to play video games and watch my fav shows on netflix.`,
+            t,
+            'CaptionEdit',
           )}
-          {renderComment()}
+
+          {renderPictureSetting('Profile picture', '', picture)}
+          {renderSetting('E-mail address', 'jesmiles@gmail.com', mail)}
+          {renderSetting('Password', '', lock, 'NewPassword')}
+          {renderSetting('Delete Account', '', recycle)}
+        </View>
+        <View>
+          <Text style={{paddingVertical: 30}}>APPLICATION</Text>
+          {renderSetting('App theme', '', apptheme)}
+          {renderSetting('Notifications', '', bell, 'NotificationSettings')}
+          {renderSetting('Blocked', '', blocked, 'BlockedList')}
         </View>
       </ScrollView>
     </View>
@@ -106,57 +254,3 @@ const styles = StyleSheet.create({
     borderWidth: 0.6,
   },
 });
-
-{
-  /* <TouchableOpacity
-onPress={() => navigation.navigate('NameChange')}
-style={styles.appButtonContainer}>
-<Text style={styles.appButtonText}>Go to Name Change</Text>
-</TouchableOpacity>
-<TouchableOpacity
-onPress={() => navigation.navigate('CaptionEdit')}
-style={styles.appButtonContainer}>
-<Text style={styles.appButtonText}>Go to Caption Edit</Text>
-</TouchableOpacity>
-<TouchableOpacity
-onPress={() => navigation.navigate('ChangeAccount')}
-style={styles.appButtonContainer}>
-<Text style={styles.appButtonText}>Go to Change Account</Text>
-</TouchableOpacity>
-<TouchableOpacity
-onPress={() => navigation.navigate('BlockList')}
-style={styles.appButtonContainer}>
-<Text style={styles.appButtonText}>Go to Block List</Text>
-</TouchableOpacity>
-<TouchableOpacity
-onPress={() => navigation.navigate('Notifications')}
-style={styles.appButtonContainer}>
-<Text style={styles.appButtonText}>Go to Notifications Settings</Text>
-</TouchableOpacity>
-<TouchableOpacity
-onPress={() => navigation.navigate('NewPassword')}
-style={styles.appButtonContainer}>
-<Text style={styles.appButtonText}>Go to New Password</Text>
-</TouchableOpacity>
-
-const styles = StyleSheet.create({
-  appButtonContainer: {
-    elevation: 8,
-    backgroundColor: '#009688',
-    borderRadius: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 12,
-    marginTop: 25,
-    marginLeft: 50,
-    marginRight: 50,
-  },
-
-  appButtonText: {
-    fontSize: 18,
-    color: '#fff',
-    fontWeight: 'bold',
-    alignSelf: 'center',
-    textTransform: 'uppercase',
-  },
-}); */
-}
