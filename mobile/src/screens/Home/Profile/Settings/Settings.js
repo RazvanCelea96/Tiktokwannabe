@@ -178,7 +178,7 @@ export default function Settings({navigation}) {
         flex: 1,
         flexDirection: 'column',
         alignItems: 'stretch',
-        backgroundColor: '#fff',
+        backgroundColor: 'white',
         paddingLeft: 20,
       }}>
       <ScrollView showsVerticalScrollIndicator={false}>

@@ -143,6 +143,7 @@ export default function Profile({navigation}) {
         flex: 1,
         flexDirection: 'column',
         alignItems: 'stretch',
+        backgroundColor: 'white',
       }}>
       <View style={{paddingLeft: 10}}>
         {renderTop()}

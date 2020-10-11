@@ -81,7 +81,7 @@ const HomeStack = createStackNavigator(
     NotificationsPreview,
   },
   {
-    headerMode: 'none',
+    headerMode: 'screen',
     initialRouteName: 'Home',
   },
 );
