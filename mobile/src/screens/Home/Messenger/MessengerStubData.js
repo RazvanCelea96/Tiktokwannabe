@@ -17,7 +17,7 @@ export const chats = [
     isTyping: false,
     delivered: false,
     seen: false,
-    photo: [`Elipse 11.png`],
+    photo: [require(`../../../assets/MessengerAssets/Ellipse_11.png`)],
   },
   {
     name: `James, Beth`,
@@ -32,7 +32,7 @@ export const chats = [
     isTyping: false,
     delivered: false,
     seen: false,
-    photo: [`Oval.png`, `Oval2.png`],
+    photo: [require(`../../../assets/MessengerAssets/Oval.png`), require(`../../../assets/MessengerAssets/Oval2.png`)],
   },
   {
     name: `Brandon Wilson`,
@@ -47,7 +47,7 @@ export const chats = [
     isTyping: true,
     delivered: false,
     seen: false,
-    photo: [`Elipse 18.png`],
+    photo: [require(`../../../assets/MessengerAssets/Ellipse_18.png`)],
   },
   {
     name: `James miles`,
@@ -62,7 +62,7 @@ export const chats = [
     isTyping: false,
     delivered: false,
     seen: false,
-    photo: [`Elipse 18.png`],
+    photo: [require(`../../../assets/MessengerAssets/Ellipse_15.png`)],
   },
   {
     name: `Zach spencer`,
@@ -77,7 +77,7 @@ export const chats = [
     isTyping: false,
     delivered: true,
     seen: false,
-    photo: [`Elipse 12.png`],
+    photo: [require(`../../../assets/MessengerAssets/Ellipse_12.png`)],
   },
   {
     name: `Andrew Sorbo`,
@@ -92,7 +92,7 @@ export const chats = [
     isTyping: false,
     delivered: false,
     seen: true,
-    photo: [`Elipse 16.png`],
+    photo: [require(`../../../assets/MessengerAssets/Ellipse_16.png`)],
   },
   {
     name: `Leslie Robertson`,
@@ -107,7 +107,7 @@ export const chats = [
     isTyping: false,
     delivered: false,
     seen: false,
-    photo: [`Elipse 17.png`],
+    photo: [require(`../../../assets/MessengerAssets/Ellipse_17.png`)],
   },
   {
     name: `Sara mello`,
@@ -122,6 +122,6 @@ export const chats = [
     isTyping: false,
     delivered: false,
     seen: false,
-    photo: [`Elipse 17.png`],
+    photo: [require(`../../../assets/MessengerAssets/Ellipse_14.png`)],
   },
 ];
