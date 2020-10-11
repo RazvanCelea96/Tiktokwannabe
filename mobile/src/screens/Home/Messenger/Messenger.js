@@ -139,7 +139,7 @@ export default function Messenger({navigation}) {
 
   const renderMessages = () => {
     return (
-      <View style={{borderColor: 'green', borderWidth: 2, marginTop: 20}}>
+      <View style={{ marginTop: 20}}>
         <Text style={{fontSize: 12, height: 22, width: 74, opacity: 0.5}}>MESSAGES</Text>
         <ScrollView style={{marginTop: 13}} >
           {renderChat(chats[0])}
@@ -158,8 +158,7 @@ export default function Messenger({navigation}) {
   return (
     <View
       style={{
-        borderColor: 'orange',
-        borderWidth: 2,
+        
         flex: 1,
         paddingLeft: 19,
         backgroundColor: 'white',
