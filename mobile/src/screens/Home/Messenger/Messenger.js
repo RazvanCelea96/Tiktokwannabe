@@ -97,11 +97,21 @@ export default function Messenger({navigation}) {
         </View>
       )
     }
+    if(chatInfo.lastMessage.type === 'photo'){
+      return (<Text style={{fontSize: 15}}>photo</Text>)
+    }
+  }
+
+  const renderNotification = (chatInfo) => {
+    if(chatInfo.notifications === 1)
+    return (<View style={{borderWidth: 2, borderColor: 'red', borderRadius: 50}}>
+
+    </View>);
   }
 
   const renderChat = (chatInfo) => {
     return (
-      <View style={{flexDirection: 'row', marginBottom: 29}}>
+      <View style={{flexDirection: 'row', marginBottom: 29, alignItems:'center'}}>
         <View style={{width: 50, height: 50, marginRight: 14}}>
           <Image
               source={chatInfo.photo[0]}
@@ -131,7 +141,7 @@ export default function Messenger({navigation}) {
     return (
       <View style={{borderColor: 'green', borderWidth: 2, marginTop: 20}}>
         <Text style={{fontSize: 12, height: 22, width: 74, opacity: 0.5}}>MESSAGES</Text>
-        <ScrollView style={{marginTop: 13}}>
+        <ScrollView style={{marginTop: 13}} >
           {renderChat(chats[0])}
           {renderChat(chats[1])}
           {renderChat(chats[2])}
