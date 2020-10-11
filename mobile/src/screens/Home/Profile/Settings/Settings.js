@@ -208,11 +208,11 @@ export default function Settings({navigation}) {
             'NewEmail',
           )}
           {renderSetting('Password', '', lock, 'NewPassword')}
-          {renderSetting('Delete Account', '', recycle)}
+          {renderSetting('Delete Account', '', recycle, '')}
         </View>
         <View>
           <Text style={{paddingVertical: 30}}>APPLICATION</Text>
-          {renderSetting('App theme', '', apptheme)}
+          {renderSetting('App theme', '', apptheme, 'AppTheme')}
           {renderSetting('Notifications', '', bell, 'NotificationSettings')}
           {renderSetting('Blocked', '', blocked, 'BlockedList')}
         </View>

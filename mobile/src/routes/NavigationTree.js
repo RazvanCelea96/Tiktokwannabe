@@ -7,6 +7,7 @@ import Messenger from '../screens/Home/Messenger/Messenger';
 import Chat from '../screens/Home/Messenger/Chat';
 import Profile from '../screens/Home/Profile/Profile';
 import Settings from '../screens/Home/Profile/Settings/Settings';
+import AppTheme from '../screens/Home/Profile/Settings/AppTheme';
 import Login from '../screens/Login/LoginContainer';
 import ResetPassword from '../screens/Login/ResetPassword';
 import Share from '../screens/Home/Share';
@@ -72,6 +73,7 @@ const HomeStack = createStackNavigator(
     BlockedList,
     NewEmail,
     NewPassword,
+    AppTheme,
     VerifyNewPassword,
     NotificationSettings,
     NotificationRequests,

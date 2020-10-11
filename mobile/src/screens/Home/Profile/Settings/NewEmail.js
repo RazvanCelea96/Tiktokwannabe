@@ -1,10 +1,75 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 
-export default function NewEmail() {
+export default function NewEmail({navigation}) {
   return (
-    <View>
-      <Text>New Email Screen</Text>
+    <View
+      style={{
+        padding: 10,
+        paddingTop: 60,
+        height: '100%',
+        display: 'flex',
+        flex: 1,
+        flexDirection: 'column',
+        alignItems: 'stretch',
+        backgroundColor: '#fff',
+        paddingLeft: 20,
+      }}>
+      <View style={{marginBottom: 10}}>
+        <Text
+          style={{
+            fontSize: 14,
+            fontWeight: '500',
+            alignItems: 'center',
+            lineHeight: 21,
+            color: 'black',
+          }}>
+          Type in your new email address down below. When your done, press save!
+        </Text>
+      </View>
+
+      <View
+        style={{
+          width: 335,
+          height: 57,
+          justifyContent: 'center',
+          paddingHorizontal: 15,
+        }}>
+        <TextInput
+          style={{
+            width: 335,
+            height: 57,
+            color: 'black',
+            borderRadius: 100,
+            backgroundColor: '#f4f6f8',
+            marginTop: 20,
+            paddingLeft: 30,
+          }}
+          placeholder="New E-Mail"
+          autoCorrect={false}
+          autoCompleteType="off"
+          keyboardAppearance="dark"
+          numberOfLines={1}
+          spellCheck={false}
+        />
+      </View>
+
+      <TouchableOpacity
+        style={{
+          width: 169,
+          backgroundColor: '#C6D0DA',
+          borderRadius: 100,
+          height: 56,
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginTop: 50,
+          marginLeft: 100,
+        }}
+        onPress={() => {
+          navigation.navigate('Settings');
+        }}>
+        <Text style={{color: 'white', fontSize: 17}}>Save</Text>
+      </TouchableOpacity>
     </View>
   );
 }
