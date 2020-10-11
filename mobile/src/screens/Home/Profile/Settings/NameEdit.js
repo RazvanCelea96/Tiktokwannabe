@@ -6,7 +6,7 @@ export default function NameEdit({navigation}) {
     <View
       style={{
         padding: 10,
-        paddingTop: 30,
+        paddingTop: 60,
         height: '100%',
         display: 'flex',
         flex: 1,
@@ -62,13 +62,13 @@ export default function NameEdit({navigation}) {
           height: 56,
           alignItems: 'center',
           justifyContent: 'center',
-          marginTop: 60,
-          marginLeft: 80,
+          marginTop: 50,
+          marginLeft: 100,
         }}
         onPress={() => {
           navigation.navigate('Settings');
         }}>
-        <Text style={{color: 'white'}}>Save</Text>
+        <Text style={{color: 'white', fontSize: 17}}>Save</Text>
       </TouchableOpacity>
     </View>
   );
