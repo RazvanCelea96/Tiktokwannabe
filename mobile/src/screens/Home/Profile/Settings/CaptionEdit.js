@@ -15,12 +15,11 @@ export default function CaptionEdit({navigate}) {
         backgroundColor: '#fff',
         paddingLeft: 20,
       }}>
-      <View style={{marginBottom: 10}}>
+      <View style={{marginBottom: 10, paddingLeft: 20}}>
         <Text
           style={{
             fontSize: 14,
             fontWeight: '500',
-            alignItems: 'center',
             lineHeight: 21,
             color: 'black',
           }}>
