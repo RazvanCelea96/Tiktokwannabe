@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import avatar5 from '../../../../assets/avatar5.png';
+import avatar6 from '../../../../assets/avatar6.png';
 import apptheme from '../../../../assets/apptheme.png';
 import bell from '../../../../assets/bell.png';
 import blocked from '../../../../assets/blocked.png';
@@ -188,7 +189,7 @@ export default function Settings({navigation}) {
           {renderProfileSetting(
             'Main account',
             'smallsnake312',
-            avatar5,
+            avatar6,
             'ChangeAccount',
           )}
           {renderSetting('Name', 'Ahmed Shubber', profile, 'NameEdit')}

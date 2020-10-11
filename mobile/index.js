@@ -7,7 +7,7 @@ import thunk from 'redux-thunk';
 import {Provider} from 'react-redux';
 import AppReducer from './src/App/AppReducer';
 import AppContainer from './src/App/AppContainer';
-
+import {setCustomText} from 'react-native-global-props';
 //redux and react-redux settings
 
 const reducers = combineReducers({
@@ -15,6 +15,13 @@ const reducers = combineReducers({
   dashboardState: DashboardReducer,
   appState: AppReducer,
 });
+
+const customTextProps = {
+  style: {
+    fontFamily: 'AvenirNextCyr-Regular',
+  },
+};
+setCustomText(customTextProps);
 
 const store = createStore(reducers, applyMiddleware(thunk));
 
