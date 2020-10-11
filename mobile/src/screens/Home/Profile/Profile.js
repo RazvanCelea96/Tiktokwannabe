@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
-import photoCarousel1 from '../../../assets/photoCarousel1.jpg';
-import photoCarousel2 from '../../../assets/photoCarousel2.jpg';
+import photoCarousel1 from '../../../assets/photoCarousel1.png';
+import photoCarousel2 from '../../../assets/photoCarousel2.png';
 import avatar1 from '../../../assets/avatar1.png';
-import avatar2 from '../../../assets/avatar2.png';
+import avatar6 from '../../../assets/avatar6.png';
 import avatar3 from '../../../assets/avatar3.png';
 import avatar4 from '../../../assets/avatar4.png';
 import avatar5 from '../../../assets/avatar5.png';
@@ -41,7 +41,7 @@ export default function Profile({navigation}) {
                 letterSpacing: 0.5,
                 fontSize: 11,
                 lineHeight: 22,
-                //fontFamily: 'Avenir Next Cyr',
+                paddingTop: 2.5,
               }}>
               Settings
             </Text>
@@ -111,9 +111,10 @@ export default function Profile({navigation}) {
         style={{
           alignItems: 'flex-start',
           flexDirection: 'row',
+          marginBottom: 20,
         }}>
         <Image
-          style={{width: 50, height: 50, borderRadius: 25}}
+          style={{width: 35.8, height: 35.8, borderRadius: 25}}
           source={avatar}
         />
         <View
@@ -168,9 +169,8 @@ export default function Profile({navigation}) {
           </Text>
 
           {renderComment(avatar1)}
-          {renderComment(avatar2)}
+          {renderComment(avatar6)}
           {renderComment(avatar3)}
-          {renderComment(avatar4)}
         </View>
       </ScrollView>
     </View>
@@ -209,7 +209,7 @@ const styles = StyleSheet.create({
     height: 26,
     width: 100,
     borderRadius: 8,
-    borderColor: 'black',
-    borderWidth: 0.6,
+    borderColor: 'solid rgba(0, 0, 0, 0.4)',
+    borderWidth: 0.5,
   },
 });
