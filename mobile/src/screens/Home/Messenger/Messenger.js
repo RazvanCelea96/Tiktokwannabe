@@ -50,7 +50,7 @@ export default function Messenger({navigation}) {
             }}
           />
         </View>
-        <Text style={{font: 12, fontWeight: '500'}}>{style.name}</Text>
+        <Text style={{fontSize: 12, fontWeight: '500'}}>{style.name}</Text>
       </View>
     );
   }
@@ -62,7 +62,7 @@ export default function Messenger({navigation}) {
         showsHorizontalScrollIndicator={false}>
           {renderReaction(reactions[0])}
           {renderReaction(reactions[1])}
-        </ScrollView>
+      </ScrollView>
     );
   }
 
@@ -123,8 +123,8 @@ export default function Messenger({navigation}) {
         </View>
         <View>
           <View style={{flexDirection: 'row', alignItems: 'baseline'}}>
-            <Text style={{fontSize: 16}}>{chatInfo.name}</Text>
-            <Text style={{fontSize: 12, marginLeft: 7, opacity: 0.5}}>{chatInfo.time}</Text>
+            <Text style={{fontSize: 16, fontWeight: '500'}}>{chatInfo.name}</Text>
+            <Text style={{fontSize: 11, fontWeight: '500', marginLeft: 7, opacity: 0.5}}>{chatInfo.time}</Text>
           </View>
           <View style={{marginTop: 5}}>
             {renderLastMessage(chatInfo)}
@@ -158,7 +158,7 @@ export default function Messenger({navigation}) {
   return (
     <View
       style={{
-        
+        paddingTop: 27,
         flex: 1,
         paddingLeft: 19,
         backgroundColor: 'white',
