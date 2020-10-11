@@ -1,6 +1,6 @@
 export const reactions = [
-  {name: 'James', photo: `Elipse 19.png`, isActive: true},
-  {name: 'Jessica', photo: `Elipse 147.png`, isActive: false},
+  {name: 'James', photo: require(`../../../assets/MessengerAssets/Ellipse_19.png`), isActive: true},
+  {name: 'Jessica', photo: require(`../../../assets/MessengerAssets/Ellipse_147.png`), isActive: false},
 ];
 
 export const chats = [
