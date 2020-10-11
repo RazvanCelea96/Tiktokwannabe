@@ -21,6 +21,7 @@
 		763135C4DE48333854AAA1EC /* libPods-Tiktokwannabe-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8867E622759E5AE8A8D1D68B /* libPods-Tiktokwannabe-tvOS.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		DAE23F7225336A5E00B2CC91 /* feather 400.otf in Resources */ = {isa = PBXBuildFile; fileRef = DAE23F7125336A5E00B2CC91 /* feather 400.otf */; };
+		DAE23F78253370DF00B2CC91 /* AvenirNextCyr-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAE23F77253370DF00B2CC91 /* AvenirNextCyr-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		9E00C54957D2BB85052B1598 /* libPods-Tiktokwannabe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tiktokwannabe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC141154F0EB16B568472E66 /* Pods-Tiktokwannabe-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tiktokwannabe-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Tiktokwannabe-tvOSTests/Pods-Tiktokwannabe-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DAE23F7125336A5E00B2CC91 /* feather 400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "feather 400.otf"; path = "../../../../../Downloads/feather_Font_Family_(Fontmirror)/feather 400.otf"; sourceTree = "<group>"; };
+		DAE23F77253370DF00B2CC91 /* AvenirNextCyr-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AvenirNextCyr-Regular.ttf"; path = "../../../../../Downloads/AvenirNextCyr-Regular.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F64C983A7D4D8D55FD3949C8 /* libPods-Tiktokwannabe-TiktokwannabeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tiktokwannabe-TiktokwannabeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,6 +205,7 @@
 		DAE23F7025336A4100B2CC91 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DAE23F77253370DF00B2CC91 /* AvenirNextCyr-Regular.ttf */,
 				DAE23F7125336A5E00B2CC91 /* feather 400.otf */,
 			);
 			name = Resources;
@@ -352,6 +355,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				DAE23F7225336A5E00B2CC91 /* feather 400.otf in Resources */,
+				DAE23F78253370DF00B2CC91 /* AvenirNextCyr-Regular.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

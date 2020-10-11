@@ -4,6 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>AvenirNextCyr-Regular.ttf</string>
 		<string>feather 400.otf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
