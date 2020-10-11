@@ -2,8 +2,28 @@ import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {chats} from './MessengerStubData';
+import DropDownPicker from 'react-native-dropdown-picker';
 
 export default function Messenger({navigation}) {
+  const renderDropDown = () => {
+    /*
+    return (
+      <DropDownPicker
+        items={[
+          {label: 'Messages', value: 'item1'},
+          {label: 'Private Messages', value: 'item2'},
+          {label: 'Groups', value: 'item1'},
+          {label: 'Reactions', value: 'item2'},
+        ]}
+        defaultIndex={0}
+        containerStyle={{height: 40}}
+        onChangeItem={(item) => console.log(item.label, item.value)}
+      />
+    );
+    */
+    return <Text>DropDown</Text>;
+  };
+
   return (
     <View
       style={{
@@ -12,7 +32,7 @@ export default function Messenger({navigation}) {
         flex: 1,
       }}>
       <View style={{borderColor: 'red', borderWidth: 2}}>
-        <Text>s</Text>
+        {renderDropDown()}
       </View>
       <View style={{borderColor: 'blue', borderWidth: 2}}>
         <Text>s</Text>
