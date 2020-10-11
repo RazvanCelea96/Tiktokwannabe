@@ -5,8 +5,21 @@ import {chats} from './MessengerStubData';
 
 export default function Messenger({navigation}) {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>{chats[0].name}</Text>
+    <View
+      style={{
+        borderColor: 'orange',
+        borderWidth: 2,
+        flex: 1,
+      }}>
+      <View style={{borderColor: 'red', borderWidth: 2}}>
+        <Text>s</Text>
+      </View>
+      <View style={{borderColor: 'blue', borderWidth: 2}}>
+        <Text>s</Text>
+      </View>
+      <View style={{borderColor: 'green', borderWidth: 2}}>
+        <Text>s</Text>
+      </View>
     </View>
   );
 }
