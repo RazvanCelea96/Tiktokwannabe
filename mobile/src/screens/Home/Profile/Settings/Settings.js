@@ -13,7 +13,7 @@ import t from '../../../../assets/t.png';
 import recycle from '../../../../assets/recycle.png';
 
 export default function Settings({navigation}) {
-  const [pictureIsPressed, setPicutreIsPressed] = useState(true);
+  const [pictureIsPressed, setPictureIsPressed] = useState(false);
   const renderPictureSetting = (
     name,
     description,
@@ -48,11 +48,8 @@ export default function Settings({navigation}) {
         </View>
         <View style={{flexDirection: 'column'}}>
           <TouchableOpacity
-            onPress={
-              (() => (setPicutreIsPressed = pictureIsPressed = true),
-              console.log(pictureIsPressed))
-            }>
-            <Text>{renderText(name)}</Text>
+            onPress={() => setPictureIsPressed(!pictureIsPressed)}>
+            <Text style={{marginLeft: 20}}>{renderText(name)}</Text>
           </TouchableOpacity>
           {pictureIsPressed ? (
             <View style={{flexDirection: 'row', marginLeft: 17}}>
@@ -203,7 +200,12 @@ export default function Settings({navigation}) {
           )}
 
           {renderPictureSetting('Profile picture', '', picture)}
-          {renderSetting('E-mail address', 'jesmiles@gmail.com', mail)}
+          {renderSetting(
+            'E-mail address',
+            'jesmiles@gmail.com',
+            mail,
+            'NewEmail',
+          )}
           {renderSetting('Password', '', lock, 'NewPassword')}
           {renderSetting('Delete Account', '', recycle)}
         </View>
