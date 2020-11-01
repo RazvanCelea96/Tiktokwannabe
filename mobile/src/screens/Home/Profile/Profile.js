@@ -139,7 +139,7 @@ export default function Profile({navigation}) {
       style={{
         padding: 10,
         paddingTop: 30,
-        height: '100%',
+        height: '90%',
         display: 'flex',
         flex: 1,
         flexDirection: 'column',
